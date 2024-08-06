@@ -1,0 +1,42 @@
+<%layout('layouts/boilerplate.ejs')%>
+    <form method="post" action="/listings" class="add-page">
+        <div>
+            <label>Enter Title <br>
+                <input type="text" placeholder="enter title" name="title" required> 
+            </label>
+        </div>
+        <div>
+            <label>Enter description <br>
+                <textarea type="text" placeholder="enter description" name="description" required rows="5"cols=25></textarea>
+                
+            </label>
+        </div>
+        
+        <div>
+            <label>Enter Price <br>
+                <input  placeholder="enter price" name="price" required>
+            </label>
+        </div>
+       
+        <div>
+            <label>Enter image link <br>
+                <input type="text" placeholder="enter image link/url" name="image">
+            </label>
+        </div>
+        
+        <div>
+            <label>Enter location <br>
+                <input type="text" placeholder="enter location" name="location" required>
+            </label>
+        </div>
+        
+        <div>
+            <label>Enter country <br>
+                <input type="text" placeholder="enter country name" name="country" required>
+            </label>
+        </div>
+        <div>
+            <button>submit</button>
+        </div>
+    </form>
+

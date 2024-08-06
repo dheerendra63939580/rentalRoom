@@ -1,0 +1,30 @@
+<%layout('layouts/boilerplate.ejs')%>
+    <form method="post" action="/listings/<%=listing._id%>?_method=PUT" class="edit-page">
+        <h3>Update Details</h3>
+        <div>
+            <label>Edit Title <br>
+                <input type="text" value="<%=listing.title%>" name="title" required>
+            </label>
+        </div>
+       <div>
+        <label>Edit Description <br>
+            <textarea type="text"  name="description" required rows="5" cols="25"><%=listing.description%></textarea>
+        </label>
+       </div>
+        <div>
+            <label>Edit Price <br>
+                <input type="number" value="<%=listing.price%>" name="price" required>
+            </label>
+        </div>
+        <div>
+            <label>Edit image address <br>
+                <input type="text" value="<%=listing.image%>" name="image" required>
+            </label>
+        </div>
+        <div>
+            <label>Edit Location <br>
+                <input type="text" value="<%=listing.location%>" name="location" required>
+            </label>
+        </div>
+        <button>submit</button>
+    </form>

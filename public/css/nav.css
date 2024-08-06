@@ -1,0 +1,43 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.nav-r,.nav-l {
+    display: flex;
+    gap: 10px;
+    align-items:center;
+}
+.nav-r a,.nav-l>a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 3px;
+}
+.nav-r a:hover,.nav-l>a:hover {
+    background-color:blue;
+}
+.logout {
+    position: relative;
+}
+.show-username {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    left: -60px;
+}
+@media only screen and (max-width: 700px) {
+    .nav {
+        flex-direction: column;
+    }
+    .nav-r,.nav-l {
+        flex-direction: column;
+        
+    }
+}

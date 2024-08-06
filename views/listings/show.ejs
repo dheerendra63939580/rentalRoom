@@ -1,0 +1,64 @@
+<%layout('layouts/boilerplate.ejs')%>
+    
+<div style="background-color: lightblue; padding: 10px 0;">
+    <div class="show">
+        <h3>Detailed Information</h3>
+        <img src="<%=data.image%>">
+        <div class="show-info">
+            <span><b>Title: </b><%= data.title %></span>
+            <span><b>Description: </b><%= data.description %></span>
+            <span><b>Price: </b>&#8377; <%= data.price.toLocaleString('en-IN') %></span>
+            <span><b>Location: </b><%= data.location %>, <%= data.country %></span>
+            <button>Book Now</button>
+        </div>
+    <%if(currentUser && currentUser.username === data.owner.username) {%>
+        <div class="show-modify">
+            
+            <a href="/listings/<%=data._id%>/edit">Edit</a><br>
+            <form method="post" action="/listings/<%=data._id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+    <%}%>
+    </div>
+    
+</div>
+    
+<%if(currentUser) {%> 
+    <div class="create-review">
+        <h3>Give Feedback</h3>
+        <form action="/listings/<%=data._id%>/reviews" method="post" class="submit-review">
+            <div>
+                <b><label for="rating">Rating: </label></b><br>
+                <input type="range" min="1" max="5" id="rating" name="review[rating]">
+            </div>
+            <div>
+                <b><label for="comment">Comment: </label></b><br>
+                <textarea name="review[comment]" id="comment" rows="5" cols="40" required></textarea>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+<%}%>
+<h4>All Reviews</h4>
+<div class="reviews-container">
+    <% for(let x of data.reviews) {%>
+        <div class="review">
+            <b><span style="color: red">@<%=x.author.username%></span></b>
+            <div>
+                <%for(let i = 1; i <= x.rating; i++) {%>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFF55"><path d="m175-41 82-346-270-234 355-30 138-327 138 327 355 30-270 234 82 346-305-184L175-41Z"/></svg>
+                <%}%>
+            </div>
+            <i>"<%= x.comment%>"</i>
+            <%if(currentUser && currentUser._id.equals(x.author._id)) {%>
+                <form method="post" action="/listings/<%=data._id%>/reviews/<%=x._id%>?_method=DELETE">
+                    <button class="review-button">delete</button>
+                </form>
+            <%}%>
+        </div>
+    <%}%>
+</div>
+

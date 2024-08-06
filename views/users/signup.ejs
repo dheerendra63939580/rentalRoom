@@ -1,0 +1,19 @@
+<%layout('layouts/boilerplate.ejs')%>
+
+<form action="/signup" method="post" class="signup-page">
+    <div>
+        <label for="user">username </label><br>
+        <input type="text" required id="user" name="username">
+    </div>
+    <div>
+        <label for="email">email </label><br>
+        <input type="email" id="email" name="email" required> 
+    </div>
+    <div>
+        <label for="password">password</label><br>
+        <input type="password" name="password" id="password" required>
+    </div>
+    <div>
+        <button>submit</button>
+    </div>
+</form>

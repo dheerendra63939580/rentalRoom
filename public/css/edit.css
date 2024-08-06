@@ -1,0 +1,22 @@
+.edit-page {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: deeppink;
+    margin: 0 25vw;
+    padding: 10px;
+}
+.edit-page input {
+    outline: none;
+    border: none;
+    padding: 4px;
+}
+.edit-page button {
+    background-color: blue;
+    color: white;
+}
+@media only screen and (max-width: 400px) {
+    .edit-page {
+        margin: 0;
+    }
+}

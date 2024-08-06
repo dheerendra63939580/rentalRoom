@@ -1,0 +1,22 @@
+.add-page {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: deeppink;
+    margin: 0 25vw;
+    padding: 10px;
+}
+.add-page input {
+    outline: none;
+    border: none;
+    padding: 4px;
+}
+.add-page button {
+    background-color: blue;
+    color: white;
+}
+@media only screen and (max-width: 400px) {
+    .add-page {
+        margin: 0;
+    }
+}

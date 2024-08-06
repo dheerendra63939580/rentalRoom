@@ -1,0 +1,85 @@
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin:0 25vw 0 25vw;
+    gap: 10px;
+}
+.show > img {
+    height: 400px;
+}
+.show-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.show-modify {
+    display: flex;
+    justify-content: space-between;
+}
+.show-modify>form>button {
+    background-color:maroon;
+    
+    color: white;
+    cursor: pointer;
+}
+.show-modify>a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: blue;
+}
+.create-review {
+    background-color: gainsboro;
+    padding: 10px;
+}
+.submit-review {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.submit-review button {
+    background-color: blue;
+    color: white;
+  
+}
+.reviews-container {
+    background-color: lightblue;
+}
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: lightgray;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.review-button {
+    position: absolute;
+    background-color: maroon;
+    color: white;
+   top: 10px;
+   right: 10px;
+}
+@media only screen and (max-width: 440px) {
+    .show {
+        margin: 0;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 441px) {
+    .reviews-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: calc(100% - 10px);
+        gap: 10px;
+        background-color: white;
+       
+    }
+    .review {
+        margin-bottom: 0;
+    }
+}

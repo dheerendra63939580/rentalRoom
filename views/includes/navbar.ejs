@@ -1,0 +1,21 @@
+<nav class="nav">
+  <div class="nav-l">
+    <a   href="/listings"><span class="material-symbols-outlined">home</span></a>
+    <a  href="/listings">All Rooms</a>
+    <%if(currentUser && currentUser.username === 'dheeraj') {%>
+      <a  href="/listings/new">Add New Room</a>
+    <%}%>
+  </div>
+  <div class="nav-r">
+    <%if(!currentUser) {%>
+      <a   href="/signup">sign up</a>
+      <a  href="/login">login</a>
+    <%}%> 
+    <% if(currentUser) {%>
+      <div class="logout">
+        <a  href="/logout">logout</a>
+        <span class="show-username"><%=currentUser.username%></span>
+      </div>
+    <%}%>
+  </div>
+</nav>
