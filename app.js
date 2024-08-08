@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo')
 const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const Listing = require('./models/listing.js')
 require('dotenv').config()
 const User = require('./models/user.js')
 const mongoUrl = process.env.MONGODBATLAS
@@ -60,7 +61,10 @@ app.use((req,res,next)=>{
     res.locals.currentUser = req.user;
     next()
 })
-
+app.get("/",async (req,res)=>{  
+    const data= await Listing.find()
+   return  res.render('listings/index.ejs',{data})
+ })
 app.use('/listings',listingRouter)
 app.use('/listings/:id/reviews',reviewRouter)
 app.use('',userRouter)
