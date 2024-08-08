@@ -12,7 +12,7 @@ router.route('/')
 router.get('/new',isLoggedin,listingControllers.newListingForm)
 router.route('/:id')
     .get(wrapAsync(listingControllers.showInDetails))
-    .put(isLoggedin,isOwner,wrapAsync(listingControllers.updateData))
+    .patch(isLoggedin,isOwner,wrapAsync(listingControllers.updateData))
     .delete(isLoggedin,isOwner, wrapAsync(listingControllers.deleteListing))
 router.get('/:id/edit',isLoggedin,isOwner,wrapAsync(listingControllers.updateForm))
 
