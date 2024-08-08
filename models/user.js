@@ -5,6 +5,16 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true
+    },
+    username: {
+        type: String,
+        minLength: 4,
+        maxLength: 20
+    },
+    password: {
+        type: String,
+        minLength: 4,
+        maxLength: 20
     }
 })
 userSchema.plugin(passportLocalMongoose);
