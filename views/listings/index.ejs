@@ -1,9 +1,7 @@
 <%layout('layouts/boilerplate.ejs')%>
    
-  <h1>getting all data</h1>
-    
-  
-    <div class="home">
+  <h3>Available Rooms</h3>
+  <div class="home">
       <%data.map((value)=>{%>
         <div>
           <a href="/listings/<%=value._id%>" class="anchor">

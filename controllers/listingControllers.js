@@ -6,7 +6,7 @@ module.exports.newListingForm = (req,res)=>{
 
 module.exports.index = async (req,res)=>{  
     const data= await Listing.find()
-    res.render('listings/index.ejs',{data})
+   return  res.render('listings/index.ejs',{data})
  }
  module.exports.showInDetails = async (req,res,next)=>{
     const {id} = req.params;

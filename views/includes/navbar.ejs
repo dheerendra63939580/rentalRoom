@@ -12,9 +12,9 @@
       <a  href="/login">login</a>
     <%}%> 
     <% if(currentUser) {%>
-      <div class="logout">
+      <div >
         <a  href="/logout">logout</a>
-        <span class="show-username"><%=currentUser.username%></span>
+        <div style="color: red;">@<%=currentUser.username%></div>
       </div>
     <%}%>
   </div>
