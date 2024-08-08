@@ -64,7 +64,7 @@ app.use((req,res,next)=>{
 app.use('/listings',listingRouter)
 app.use('/listings/:id/reviews',reviewRouter)
 app.use('',userRouter)
-app.use("/*",(req,res,next)=>{
+app.use((req,res,next)=>{
     next(new ExpressError(404, "page not found"))
 })
 app.use((err,req,res,next)=>{
